@@ -24,6 +24,9 @@ param adminPassword string
 module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtualMachines: {
   name: 'DeployVirtualMachine-${vm.name}'
   scope: resourceGroup(ResourceGroupName)
+  dependsOn: [
+    resourceGroupModule
+  ]
   params: {
     name: vm.name
     osType: vm.osType

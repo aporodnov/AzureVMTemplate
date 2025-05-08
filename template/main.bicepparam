@@ -56,7 +56,6 @@ param virtualMachines = [
       {
         name: 'VM01-DataDisk01'
         diskSizeGB: 128
-        createOption: 'Attach'
         deleteOption: 'Detach'
         managedDisk: {
           storageAccountType: 'Standard_LRS'

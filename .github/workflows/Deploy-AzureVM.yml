@@ -52,6 +52,6 @@ jobs:
                         adminUsername=${{ secrets.ADMIN_USERNAME }} \
                         adminPassword=${{ secrets.ADMIN_PASSWORD }} \
                     --action-on-unmanage 'detachAll' \
-                    --deny-settings-mode 'denyDelete'
-                # --deny-settings-excluded-actions 'Microsoft.Compute/virtualMachines/write Microsoft.StorageAccounts/delete' \
-                # --deny-settings-excluded-principals '<object-id> <object-id>'
+                    --deny-settings-mode 'denyDelete' \
+                    --deny-settings-excluded-principals '06d981f2-ebbd-405e-8c8f-3fa6bce8174e'
+                  # --deny-settings-excluded-actions 'Microsoft.Compute/virtualMachines/write Microsoft.StorageAccounts/delete' \

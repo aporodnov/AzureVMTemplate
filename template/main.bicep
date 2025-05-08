@@ -27,8 +27,8 @@ module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtu
     osType: vm.osType
     vmSize: vm.Size
     zone: vm.Zone
-    adminUsername: vm.adminUsername
-    adminPassword: vm.adminPassword
+    adminUsername: adminUsername
+    adminPassword: adminPassword
     imageReference: vm.Image
     nicConfigurations: vm.NICconfigs
     osDisk: vm.osDisk

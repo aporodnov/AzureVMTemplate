@@ -49,8 +49,9 @@ jobs:
                     --location ${{ env.Location }} \
                     --template-file template/main.bicep \
                     --parameters template/main.bicepparam \
+                        adminUsername=${{ secrets.ADMIN_USERNAME }} \
+                        adminPassword=${{ secrets.ADMIN_PASSWORD }} \
                     --action-on-unmanage 'detachAll' \
                     --deny-settings-mode 'denyDelete'
-                    --yes
                 # --deny-settings-excluded-actions 'Microsoft.Compute/virtualMachines/write Microsoft.StorageAccounts/delete' \
                 # --deny-settings-excluded-principals '<object-id> <object-id>'

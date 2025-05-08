@@ -18,6 +18,7 @@ env:
 
 jobs:
     bicep_AzureVM_deploy:
+        environment: ${{ github.event.inputs.environment }}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Repository
@@ -26,21 +27,21 @@ jobs:
                   fetch-depth: 0
 
             - name: Example Step Using Secret
-              run: echo "The secret value is ${{ vars.AZURE_SUBSCRIPTION_ID }}"
-            - name: Azure Login
-              uses: azure/login@v2
-              with:
-                  auth-type: IDENTITY
-                  client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+              run: echo "The secret value is ${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+            # - name: Azure Login
+            #   uses: azure/login@v2
+            #   with:
+            #       auth-type: IDENTITY
+            #       client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            #       tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            #       subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-            - name: Azure CLI script
-              uses: azure/cli@v2
-              with:
-                  azcliversion: latest
-                  inlineScript: |
-                        az account show
+            # - name: Azure CLI script
+            #   uses: azure/cli@v2
+            #   with:
+            #       azcliversion: latest
+            #       inlineScript: |
+            #             az account show
 
 
             # - name: Deploy Bicep template to Azure

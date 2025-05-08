@@ -49,4 +49,4 @@ jobs:
                     --location ${{ env.Location }} \
                     --template-file template/main.bicep \
                     --name "AzureVMDeployment-${{ github.event.inputs.environment }}-${{ env.runNUmber }}" \
-                    --parameters @template/main.bicepparam \
+                    --parameters template/main.bicepparam \

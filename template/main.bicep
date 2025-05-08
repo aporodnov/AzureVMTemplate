@@ -36,5 +36,6 @@ module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtu
     osDisk: vm.osDisk
     dataDisks: vm.DataDisks
     encryptionAtHost: false
+    extensionAntiMalwareConfig: vm.extensionAntiMalwareConfig
   }
 }]

@@ -11,10 +11,13 @@ on:
                     - dev
                     - prod
                 default: 'dev'
+            applicationName:
+                description: 'Application name to append to the deployment stack name'
+                required: true
+                type: string
 
 env:
     Location: "canadacentral"
-    runNUmber: ${{ github.run_number }}
 
 permissions:
     id-token: write
@@ -45,7 +48,7 @@ jobs:
                   azcliversion: latest
                   inlineScript: |
                     az stack sub create \
-                    --name "AzureVMDeployment-${{ github.event.inputs.environment }}-${{ env.runNUmber }}" \
+                    --name "AzureVMDeployment-${{ github.event.inputs.environment }}-${{ github.event.inputs.applicationName }}" \
                     --location ${{ env.Location }} \
                     --template-file template/main.bicep \
                     --parameters template/main.bicepparam \

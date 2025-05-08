@@ -1,11 +1,8 @@
 targetScope = 'subscription'
 
-param location string = 'canadacentral'
-
+param location string
 param ResourceGroupName string
 param Tags object
-
-// param vmArray array
 
 module resourceGroupModule 'br/public:avm/res/resources/resource-group:0.4.1' = {
   scope: subscription()

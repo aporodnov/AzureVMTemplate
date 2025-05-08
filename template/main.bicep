@@ -20,7 +20,6 @@ param adminUsername string
 @secure()
 param adminPassword string
 
-param SubnetID string
 
 module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtualMachines: {
   name: 'DeployVirtualMachine-${vm.name}'

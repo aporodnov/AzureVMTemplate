@@ -8,11 +8,12 @@ param Tags = {
   Project: 'AzureMigration'
 }
 
+// Keep them all empty, the actual values are passed via GitHub environment secrets
 @secure()
 param adminUsername = ''
 @secure()
 param adminPassword = ''
-param SubnetID = ''
+
 
 param virtualMachines = [
   {
@@ -36,7 +37,7 @@ param virtualMachines = [
         ipConfiguration: [
           { 
             name: 'ifconfig01'
-            subnetId: SubnetID
+            subnetId: '/subscriptions/e97e7eb7-daad-44e7-823c-9862b6b6eb92/resourceGroups/ProdVNET-RG/providers/Microsoft.Network/virtualNetworks/org1prod-vnet/subnets/Servers'
             privateIPAllocationMethod: 'Dynamic'
           }
         ]

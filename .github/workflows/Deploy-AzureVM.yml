@@ -51,7 +51,6 @@ jobs:
                     --parameters template/main.bicepparam \
                         adminUsername=${{ secrets.ADMIN_USERNAME }} \
                         adminPassword=${{ secrets.ADMIN_PASSWORD }} \
-                        SubnetID= ${{ secrets.ORG1_PROD_SUBNETID }} \
                     --action-on-unmanage 'detachAll' \
                     --deny-settings-mode 'denyDelete' \
                     --deny-settings-excluded-principals '${{ secrets.SPN_OBJECT_ID }}'

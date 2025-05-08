@@ -40,14 +40,13 @@ jobs:
                   tenant-id: ${{ secrets.AZURE_TENANT_ID }}
                   subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-            - name: Azure CLI script
+            - name: Deploy Azure VMs
               uses: azure/cli@v2
               with:
                   azcliversion: latest
                   inlineScript: |
-                        az account show
-
-
-            # - name: Deploy Bicep template to Azure
-            #   run: |
-            #       az deployment group create --resource-group ${{ secrets.RESOURCE_GROUP }} --template-file ./bicep/AzureVM.bicep --parameters adminUsername=${{ secrets.ADMIN_USERNAME }} adminPassword=${{ secrets.ADMIN_PASSWORD }} location=${{ env.Location }} runNumber=${{ env.runNUmber }}
+                    az deployment sub create \
+                    --location ${{ env.Location }} \
+                    --template-file template/main.bicep \
+                    --name "AzureVMDeployment-${{ github.event.inputs.environment }}-${{ env.runNUmber }}" \
+                    --parameters @template/main.bicepparam \

@@ -15,9 +15,12 @@ module resourceGroupModule 'br/public:avm/res/resources/resource-group:0.4.1' = 
 }
 param virtualMachines array
 
+@secure()
 param adminUsername string
 @secure()
 param adminPassword string
+
+param SubnetID string
 
 module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtualMachines: {
   name: 'DeployVirtualMachine-${vm.name}'

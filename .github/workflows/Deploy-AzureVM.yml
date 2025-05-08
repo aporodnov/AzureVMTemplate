@@ -51,7 +51,8 @@ jobs:
                     --parameters template/main.bicepparam \
                         adminUsername=${{ secrets.ADMIN_USERNAME }} \
                         adminPassword=${{ secrets.ADMIN_PASSWORD }} \
+                        SubnetID= ${{ secrets.ORG1_PROD_SUBNETID }} \
                     --action-on-unmanage 'detachAll' \
                     --deny-settings-mode 'denyDelete' \
-                    --deny-settings-excluded-principals '06d981f2-ebbd-405e-8c8f-3fa6bce8174e'
+                    --deny-settings-excluded-principals '${{ secrets.SPN_OBJECT_ID }}'
                   # --deny-settings-excluded-actions 'Microsoft.Compute/virtualMachines/write Microsoft.StorageAccounts/delete' \

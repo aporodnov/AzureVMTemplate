@@ -12,13 +12,14 @@ param Tags = {
 param adminUsername = ''
 @secure()
 param adminPassword = ''
+param SubnetID = ''
 
 param virtualMachines = [
   {
     name: 'VM01'
     osType: 'Windows'
     Size: 'Standard_DS1_v2'
-    Zone: '1'
+    Zone: 1
     adminUsername: adminUsername
     adminPassword: adminPassword
     Image: {
@@ -35,7 +36,7 @@ param virtualMachines = [
         ipConfiguration: [
           { 
             name: 'ifconfig01'
-            subnetId: '/subscriptions/e97e7eb7-daad-44e7-823c-9862b6b6eb92/resourceGroups/ProdVNET-RG/providers/Microsoft.Network/virtualNetworks/org1prod-vnet/subnets/Servers'
+            subnetId: SubnetID
             privateIPAllocationMethod: 'Dynamic'
           }
         ]

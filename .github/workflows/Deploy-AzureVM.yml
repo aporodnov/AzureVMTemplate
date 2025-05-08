@@ -16,6 +16,10 @@ env:
     Location: "canadacentral"
     runNUmber: ${{ github.run_number }}
 
+permissions:
+    id-token: write
+    contents: read
+
 jobs:
     bicep_AzureVM_deploy:
         environment: ${{ github.event.inputs.environment }}

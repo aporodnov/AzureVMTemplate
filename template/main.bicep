@@ -13,3 +13,4 @@ module resourceGroupModule 'br/public:avm/res/resources/resource-group:0.4.1' = 
     tags: Tags
   }
 }
+

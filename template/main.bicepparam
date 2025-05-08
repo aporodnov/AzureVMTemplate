@@ -34,7 +34,7 @@ param virtualMachines = [
         name: 'VM01-NIC01'
         deleteOption: 'Delete'
         // networkSecurityGroupResourceId: 'FIXME'
-        ipConfiguration: [
+        ipConfigurations: [
           { 
             name: 'ifconfig01'
             subnetId: '/subscriptions/e97e7eb7-daad-44e7-823c-9862b6b6eb92/resourceGroups/ProdVNET-RG/providers/Microsoft.Network/virtualNetworks/org1prod-vnet/subnets/Servers'

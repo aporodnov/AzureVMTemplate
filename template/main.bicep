@@ -37,4 +37,3 @@ module VM 'br/public:avm/res/compute/virtual-machine:0.15.0' = [ for vm in virtu
     dataDisks: vm.DataDisks
   }
 }]
-

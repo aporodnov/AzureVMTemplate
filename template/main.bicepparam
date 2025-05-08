@@ -36,8 +36,8 @@ param virtualMachines = [
         // networkSecurityGroupResourceId: 'FIXME'
         ipConfigurations: [
           { 
-            name: 'ifconfig01'
-            subnetId: '/subscriptions/e97e7eb7-daad-44e7-823c-9862b6b6eb92/resourceGroups/ProdVNET-RG/providers/Microsoft.Network/virtualNetworks/org1prod-vnet/subnets/Servers'
+            name: 'ipconfig1'
+            subnetResourceId: '/subscriptions/e97e7eb7-daad-44e7-823c-9862b6b6eb92/resourceGroups/ProdVNET-RG/providers/Microsoft.Network/virtualNetworks/org1prod-vnet/subnets/Servers'
             privateIPAllocationMethod: 'Dynamic'
           }
         ]

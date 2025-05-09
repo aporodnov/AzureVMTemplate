@@ -33,8 +33,6 @@ jobs:
               with:
                   fetch-depth: 0
 
-            # - name: Example Step Using Secret
-            #   run: echo "The secret value is ${{ secrets.AZURE_SUBSCRIPTION_ID }}"
             - name: Azure Login
               uses: azure/login@v2
               with:
@@ -57,4 +55,3 @@ jobs:
                     --action-on-unmanage 'detachAll' \
                     --deny-settings-mode 'denyDelete' \
                     --deny-settings-excluded-principals '${{ secrets.SPN_OBJECT_ID }}'
-                  # --deny-settings-excluded-actions 'Microsoft.Compute/virtualMachines/write Microsoft.StorageAccounts/delete' \
